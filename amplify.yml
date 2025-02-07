@@ -1,0 +1,19 @@
+version: 1
+applications:
+  - frontend:
+      phases:
+        preBuild:
+          commands:
+            - npm install --force --cache .npm --prefer-offline
+        build:
+          commands:
+            - npx nx build test-workspace
+      artifacts:
+        baseDirectory: apps/test-workspace/.next
+        files:
+          - "**/*"
+      cache:
+        paths:
+          - .npm/**/*
+      buildPath: /
+    appRoot: apps/test-workspace
