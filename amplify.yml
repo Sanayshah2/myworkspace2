@@ -4,6 +4,8 @@ applications:
       phases:
         preBuild:
           commands:
+            - echo $AWS_LOG_BUCKET
+            - printenv
             - npm install --force --cache .npm --prefer-offline
         build:
           commands:
