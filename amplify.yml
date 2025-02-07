@@ -7,13 +7,13 @@ applications:
             - npm install --force --cache .npm --prefer-offline
         build:
           commands:
-            - npx nx build test-workspace
+            - npx nx build next-app
       artifacts:
-        baseDirectory: apps/test-workspace/.next
+        baseDirectory: apps/next-app/.next
         files:
           - "**/*"
       cache:
         paths:
           - .npm/**/*
       buildPath: /
-    appRoot: apps/test-workspace
+    appRoot: apps/next-app
